@@ -79,7 +79,52 @@ function rollDice() {
 }
 
 function healPange() {
-  if (pangeHp <= 0) return; // non curare se sei già morto
-  pangeHp = Math.min(10, pangeHp + 2);
-  document.getElementById("pangeHp").innerText = pangeHp;
+  const die1Elem = document.getElementById('die1');
+  const die2Elem = document.getElementById('die2');
+  const resultElem = document.getElementById('result');
+  const pangeStatus = document.getElementById('pangeStatus');
+
+  // Reset animazioni e bordi
+  die1Elem.classList.remove("damage-pange", "damage-enemy");
+  die2Elem.classList.remove("damage-pange", "damage-enemy");
+  die1Elem.classList.add("heal-mode");
+  die2Elem.classList.add("heal-mode");
+
+  let rollCount = 0;
+  const maxRolls = 15;
+  const interval = 50;
+
+  const rollInterval = setInterval(() => {
+    const die1 = Math.floor(Math.random() * 6) + 1;
+    const die2 = Math.floor(Math.random() * 6) + 1;
+
+    die1Elem.src = `images/dice/die${die1}.png`;
+    die2Elem.src = `images/dice/die${die2}.png`;
+
+    rollCount++;
+    if (rollCount >= maxRolls) {
+      clearInterval(rollInterval);
+
+      die1Elem.classList.remove("heal-mode");
+      die2Elem.classList.remove("heal-mode");
+
+      const dice = [die1, die2];
+      const stars = dice.filter(v => v === 5 || v === 6).length;
+      const has34 = dice.some(v => v === 3 || v === 4);
+
+      let healAmount = 0;
+      if (stars === 2) {
+        healAmount = 6;
+      } else if (stars === 1) {
+        healAmount = 4;
+      } else if (has34) {
+        healAmount = 2;
+      }
+
+      pangeHp = Math.min(10, pangeHp + healAmount);
+      document.getElementById("pangeHp").innerText = pangeHp;
+
+      resultElem.innerText = `Pange si cura di ${healAmount} ❤️.`;
+    }
+  }, interval);
 }
