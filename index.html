@@ -1,25 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Final Pange - Skill Check</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="card">
-    <h1>FINAL PANGE</h1>
-    <p>Esegui un <strong>perfect roll</strong></p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Final Pange</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="card">
+      <div class="status-bar">
+        <div id="pangeStatus" class="status">
+          Pange ❤️: <span id="pangeHp">10</span>
+        </div>
+        <div id="enemyStatus" class="status">
+          Gli anni de Cristo ❤️: <span id="enemyHp">7</span>
+        </div>
+      </div>
+      <div class="enemy-card">
+        <img src="images/gli-anni-de-cristo.png" alt="Nemico" />
+      </div>
+      <div class="dice-container">
+        <img id="die1" class="die" src="images/dice/die1.png" alt="Dado 1" />
+        <img id="die2" class="die" src="images/dice/die1.png" alt="Dado 2" />
+      </div>
 
-    <div class="dice-container">
-      <img id="die1" class="die" src="images/dice/die1.png" alt="Dado 1" />
-      <img id="die2" class="die" src="images/dice/die1.png" alt="Dado 2" />
+      <button onclick="rollDice()">🎲 Lancia i dadi (turno)</button>
+      <button onclick="healPange()">💊 Recupera 2 ❤️</button>
+      <p id="result"></p>
     </div>
 
-    <button onclick="rollDice()">🎲 Lancia i dadi</button>
-    <p id="result"></p>
-  </div>
-
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>

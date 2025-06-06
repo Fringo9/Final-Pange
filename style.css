@@ -1,7 +1,7 @@
 body {
   background: #111;
   color: #fff;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,11 +18,38 @@ body {
   box-shadow: 0 0 20px #f00;
 }
 
+.status-bar {
+  display: flex;
+  justify-content: space-around;
+  margin: 1rem 0;
+  font-size: 1.2rem;
+}
+
+.status-bar .status {
+  transition: all 0.2s ease-in-out;
+}
+
+.status.damage-pange {
+  animation: damage 0.5s;
+}
+
+.status.damage-enemy {
+  animation: flash-red 0.5s;
+}
+
+.enemy-card img {
+  width: 300px;
+  border: 3px solid red;
+  border-radius: 8px;
+  margin: 1rem auto;
+  display: block;
+}
+
 button {
   margin-top: 1rem;
   padding: 0.75rem 1.5rem;
   font-size: 1.2rem;
-  background-color: #ff0044;
+  background-color: #66061f;
   border: none;
   color: white;
   cursor: pointer;
@@ -51,9 +78,49 @@ button {
 }
 
 @keyframes shake {
-  0% { transform: rotate(0deg); }
-  25% { transform: rotate(20deg); }
-  50% { transform: rotate(-20deg); }
-  75% { transform: rotate(10deg); }
-  100% { transform: rotate(0deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(20deg);
+  }
+  50% {
+    transform: rotate(-20deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes damage {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes flash-red {
+  0% {
+    background-color: transparent;
+  }
+  50% {
+    background-color: rgba(255, 0, 0, 0.4);
+  }
+  100% {
+    background-color: transparent;
+  }
 }
