@@ -1,5 +1,5 @@
 let pangeHp = 10;
-let enemyHp = 7;
+let enemyHp = 33;
 
 function rollDice() {
   const die1Elem = document.getElementById("die1");
