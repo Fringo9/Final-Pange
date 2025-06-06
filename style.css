@@ -77,6 +77,11 @@ button {
   transform: rotate(20deg);
 }
 
+.die.heal-mode {
+  border: 3px solid limegreen;
+  border-radius: 8px;
+}
+
 @keyframes shake {
   0% {
     transform: rotate(0deg);
