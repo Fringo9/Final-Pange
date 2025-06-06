@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Final Pange - Skill Check</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="card">
     <h1>FINAL PANGE</h1>
-    <p>Skill Check: Roll 2 Dice and get <strong>8 or more</strong></p>
-    <button onclick="rollDice()">🎲 Roll Dice</button>
+    <p>Skill Check: Ottieni almeno <strong>1 stella</strong> su 2 dadi!</p>
+
     <div class="dice-container">
-  <div id="die1" class="die">🎲</div>
-  <div id="die2" class="die">🎲</div>
-</div>
+      <img id="die1" class="die" src="images/dice/die1.png" alt="Dado 1" />
+      <img id="die2" class="die" src="images/dice/die1.png" alt="Dado 2" />
+    </div>
+
+    <button onclick="rollDice()">🎲 Lancia i dadi</button>
     <p id="result"></p>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
