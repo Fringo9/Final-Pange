@@ -28,3 +28,27 @@ button {
   cursor: pointer;
   border-radius: 6px;
 }
+
+.dice-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.die {
+  font-size: 3rem;
+  transition: transform 0.5s;
+}
+
+.die.roll {
+  animation: roll 0.5s;
+}
+
+@keyframes roll {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(90deg); }
+  50% { transform: rotate(180deg); }
+  75% { transform: rotate(270deg); }
+  100% { transform: rotate(360deg); }
+}
